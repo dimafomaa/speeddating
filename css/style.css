@@ -855,6 +855,7 @@ body.lock {
   justify-content: center;
   gap: 20px;
   position: relative;
+  flex-wrap: wrap;
 }
 @media (max-width: 540px) {
   .form__block, .form__block--bottom {
@@ -862,11 +863,7 @@ body.lock {
     text-align: center;
   }
 }
-.form__input-name {
-  position: relative;
-  z-index: 2;
-}
-.form__input-tel {
+.form__input {
   position: relative;
   z-index: 2;
 }
@@ -885,11 +882,16 @@ body.lock {
   border-radius: 8px;
   padding: 15px;
   width: 250px;
-  height: 49px;
+  height: 51px;
   color: var(--clr2);
   font-size: 16px;
   outline: none;
   margin: 0 auto;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid var(--clr1);
+}
+.form-input:hover {
+  border: 2px solid var(--clr3);
 }
 .form-input::-moz-placeholder {
   color: rgba(76, 43, 107, 0.582);
@@ -898,7 +900,7 @@ body.lock {
   color: rgba(76, 43, 107, 0.582);
 }
 .form-input.error {
-  border: 2px solid #cc0b0b;
+  border: 2px solid red;
 }
 @media (max-width: 540px) {
   .form-input {
@@ -968,6 +970,7 @@ body.lock {
   background-color: var(--clr1);
   cursor: pointer;
   border-radius: 8px;
+  transition: all 0.3s ease-in-out;
 }
 
 .select__value {
@@ -978,6 +981,12 @@ body.lock {
   flex-direction: row-reverse;
   padding: 15px;
   text-align: left;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid var(--clr1);
+  border-radius: 8px;
+}
+.select__value:hover {
+  border: 2px solid var(--clr3);
 }
 
 .select__value::before {
@@ -1005,6 +1014,11 @@ body.lock {
   border-radius: 0 0 8px 8px;
   overflow: auto;
   max-height: 150px;
+  border-bottom: 2px solid var(--clr1);
+  transition: all 0.3s ease-in-out;
+}
+.select__options:hover {
+  border-bottom: 2px solid var(--clr3);
 }
 
 .select__option {
